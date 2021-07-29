@@ -127,11 +127,11 @@ def get_readable_message():
                     else:
                         msg += f"\n<b>🔺Up:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                     msg += f"\n<b>⚡️Speed:</b> {download.speed()}" \
-                            f"\n<b>ETA:</b> {download.eta()} " \
+                            f"\n<b>♻️ETA:</b> {download.eta()} " \
                     # if hasattr(download, 'is_torrent'):
                     try:
                         msg += f"\n<b>🥵️Seeders:</b> {download.aria_download().num_seeders}" \
-                            f" | <b>🙄Peers:</b> {download.aria_download().connections}"
+                            f" | <b>Peers:</b> {download.aria_download().connections}"
                     except:
                         pass
                     msg += f'\n<b>🏇User:</b> <a href="tg://user?id={download.message.from_user.id}">{download.message.from_user.first_name}</a>'
