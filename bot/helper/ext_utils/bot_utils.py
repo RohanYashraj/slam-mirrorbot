@@ -116,7 +116,7 @@ def get_readable_message():
         for download in list(download_dict.values()):
             INDEX += 1
             if INDEX > COUNT:
-                msg += f"<b>📃File:</b> <code>{download.name()}</code>"
+                msg += f"<b>📃Filename:</b> <code>{download.name()}</code>"
                 msg += f"\n<b>✍️Status:</b> <i>{download.status()}</i>"
                 if download.status() != MirrorStatus.STATUS_ARCHIVING and download.status() != MirrorStatus.STATUS_EXTRACTING:
                     msg += f"\n<code>{get_progress_bar_string(download)} {download.progress()}</code>"
@@ -127,7 +127,7 @@ def get_readable_message():
                     else:
                         msg += f"\n<b>🔺Up:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                     msg += f"\n<b>⚡️Speed:</b> {download.speed()}" \
-                            f"\n<b>♻️ETA:</b> {download.eta()} " \
+                            f", <b>♻️ETA:</b> {download.eta()} "
                     # if hasattr(download, 'is_torrent'):
                     try:
                         msg += f"\n<b>🥵️Seeders:</b> {download.aria_download().num_seeders}" \
